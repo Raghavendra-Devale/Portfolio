@@ -1,0 +1,39 @@
+<section id="skills">
+
+  <div class="container-custom">
+
+    <h2 class="section-title">
+      Skills
+    </h2>
+
+    <div class="skills-grid">
+
+      @for(category of skillCategories; track category.title) {
+
+        <div class="skill-card">
+
+          <h3>
+            {{ category.title }}
+          </h3>
+
+          <div class="skill-list">
+
+            @for(skill of category.skills; track skill) {
+
+              <span class="skill-badge">
+                {{ skill }}
+              </span>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,41 @@
+<section id="experience">
+
+  <div class="container-custom">
+
+    <h2 class="section-title">
+      Experience
+    </h2>
+
+    <div class="timeline">
+
+      @for(exp of experiences; track exp.company) {
+
+        <div class="experience-card">
+
+          <h3>{{ exp.role }}</h3>
+
+          <h4>{{ exp.company }}</h4>
+
+          <p class="duration">
+            {{ exp.duration }}
+          </p>
+
+          <ul>
+
+            @for(point of exp.points; track point) {
+
+              <li>{{ point }}</li>
+
+            }
+
+          </ul>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
