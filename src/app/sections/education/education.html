@@ -1,0 +1,23 @@
+<section id="education">
+  <div class="container-custom">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+      @for(edu of educationList; track edu.degree) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.institution }}</h4>
+            <div class="date">
+              <i class="fa-regular fa-calendar me-2"></i>{{ edu.duration }}
+            </div>
+            <p class="grade">
+              <i class="fa-solid fa-graduation-cap me-2 text-primary"></i>{{ edu.grade }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

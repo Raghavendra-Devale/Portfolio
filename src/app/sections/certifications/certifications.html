@@ -1,0 +1,35 @@
+<section id="certifications">
+  <div class="container-custom">
+    <h2 class="section-title">Achievements & Leadership</h2>
+
+    <div class="cert-leadership-grid">
+      <!-- Certifications Column -->
+      <div class="cert-column">
+        <h3 class="column-subtitle"><i class="fa-solid fa-award text-primary me-2"></i>Certifications</h3>
+        <div class="cert-sub-grid">
+          @for(cert of certificationsList; track cert.title) {
+            <div class="glass-card cert-card">
+              <div class="cert-icon">{{ cert.icon }}</div>
+              <h3>{{ cert.title }}</h3>
+              <p>{{ cert.issuer }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Leadership & Activities Column -->
+      <div class="leadership-column">
+        <h3 class="column-subtitle"><i class="fa-solid fa-people-group text-accent me-2"></i>Leadership & Activities</h3>
+        <div class="cert-sub-grid">
+          @for(lead of leadershipList; track lead.title) {
+            <div class="glass-card cert-card leadership-card">
+              <div class="cert-icon">{{ lead.icon }}</div>
+              <h3>{{ lead.title }}</h3>
+              <p>{{ lead.organization }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

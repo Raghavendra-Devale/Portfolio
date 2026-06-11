@@ -1,0 +1,20 @@
+<section id="services">
+  <div class="container-custom">
+    <h2 class="section-title">My Services</h2>
+
+    <div class="services-container">
+      @for(service of servicesList; track service.title) {
+        <div class="glass-card service-card">
+          <div class="service-icon-wrapper">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <a href="#contact" class="btn-service-link">
+            Get in touch <i class="fa-solid fa-arrow-right icon-arrow"></i>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

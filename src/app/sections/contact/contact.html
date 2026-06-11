@@ -1,37 +1,36 @@
 <section id="contact">
-
   <div class="container-custom">
-
-    <h2 class="section-title">
-      Let's Connect
-    </h2>
+    <h2 class="section-title">Get In Touch</h2>
 
     <p class="contact-text">
-      I'm always interested in discussing software development,
-      AI applications, and exciting opportunities.
+      I'm always open to discussing full-stack software development, AI applications, and interesting professional collaborations. Let's start a conversation!
     </p>
 
     <div class="contact-grid">
-
       @for(contact of contacts; track contact.title) {
-
-      <a
-        [href]="contact.link"
-        target="_blank"
-        class="contact-card">
-
-        <i [class]="contact.icon"></i>
-
-        <h4>
-          {{ contact.title }}
-        </h4>
-
-      </a>
-
+        <div class="glass-card contact-card">
+          <div class="contact-icon">
+            <i [class]="contact.icon"></i>
+          </div>
+          <h3>{{ contact.title }}</h3>
+          <a [href]="contact.link" target="_blank" class="contact-link">{{ contact.value }}</a>
+          <p class="contact-desc">{{ contact.desc }}</p>
+        </div>
       }
-
     </div>
 
+    <!-- Resume Banner Card -->
+    <div class="resume-section">
+      <div class="glass-card resume-card">
+        <i class="bx bxs-file-pdf"></i>
+        <div class="resume-content">
+          <h3>View My Resume</h3>
+          <p>Get a detailed overview of my experience, coursework, and technical skills</p>
+        </div>
+        <a href="assets/resume/Raghavendra_Devale.pdf" target="_blank" class="download-btn-new">
+          <i class="bx bx-show"></i> View Resume
+        </a>
+      </div>
+    </div>
   </div>
-
 </section>

@@ -14,32 +14,30 @@ export class Experience {
       company: 'DFIVE Technologies',
       duration: 'Nov 2025 - Present',
       points: [
-        'Developing Angular and Spring Boot applications',
-        'Building REST APIs',
-        'Database integration using PostgreSQL and MySQL',
-        'Authentication and authorization implementation'
+        'Developed and maintained web application features using Angular and Java backend.',
+        'Assisted in building and modifying REST APIs using Spring Boot.',
+        'Integrated frontend components with backend services and database layers.',
+        'Participated in debugging and resolving application issues to improve reliability.',
+        'Worked with MySQL/PostgreSQL for data storage and basic query operations.'
       ]
     },
     {
-      role: 'Student Ambassador',
+      role: 'Campus Ambassador',
       company: 'Rooman Technologies',
       duration: '2024 - 2025',
       points: [
-        'Promoted technical learning initiatives',
-        'Organized workshops and awareness sessions',
-        'Guided students on certifications and career development',
-        'Developed leadership and communication skills'
+        'Organized and promoted technical learning initiatives and awareness sessions.',
+        'Guided students on certifications, workshops, and career development opportunities.',
+        'Developed leadership, organization, and professional communication skills.'
       ]
     },
     {
-      role: 'Technical Apprentice',
-      company: 'Bharat Electronics Limited',
+      role: 'Trainee Apprentice',
+      company: 'Bharat Electronics Limited (BEL)',
       duration: 'Nov 2021 - Nov 2022',
       points: [
-        'Worked with technical teams',
-        'Learned SDLC practices',
-        'Used IBM Rational ALM',
-        'Contributed to documentation and quality processes'
+        'Assisted in understanding system workflows and basic software operations.',
+        'Supported documentation and learning of system-level processes under guidance.'
       ]
     }
   ];

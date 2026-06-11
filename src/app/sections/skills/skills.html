@@ -1,39 +1,16 @@
 <section id="skills">
-
   <div class="container-custom">
-
-    <h2 class="section-title">
-      Skills
-    </h2>
+    <h2 class="section-title">Skills & Expertise</h2>
 
     <div class="skills-grid">
-
-      @for(category of skillCategories; track category.title) {
-
-        <div class="skill-card">
-
-          <h3>
-            {{ category.title }}
-          </h3>
-
-          <div class="skill-list">
-
-            @for(skill of category.skills; track skill) {
-
-              <span class="skill-badge">
-                {{ skill }}
-              </span>
-
-            }
-
+      @for(skill of skillsList; track skill.name) {
+        <div class="glass-card skill-item-card">
+          <div class="skill-icon-wrapper">
+            <i [class]="skill.icon"></i>
           </div>
-
+          <p class="skill-name">{{ skill.name }}</p>
         </div>
-
       }
-
     </div>
-
   </div>
-
 </section>

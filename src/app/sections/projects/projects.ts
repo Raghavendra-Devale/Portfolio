@@ -8,6 +8,7 @@ interface Project {
   technologies: string[];
   github: string;
   featured: boolean;
+  image: string;
 }
 
 @Component({
@@ -33,7 +34,8 @@ export class Projects {
         'Vector Search'
       ],
       github: 'https://github.com/Raghavendra-Devale/knowledge-mesh-ai',
-      featured: true
+      featured: true,
+      image: 'assets/images/knowledge_mesh.png'
     },
 
     {
@@ -49,7 +51,8 @@ export class Projects {
         'RAG'
       ],
       github: 'https://github.com/Raghavendra-Devale/chatbot-capsule',
-      featured: true
+      featured: true,
+      image: 'assets/images/chatbot_capsule.png'
     },
 
     {
@@ -64,7 +67,8 @@ export class Projects {
         'REST API'
       ],
       github: 'https://github.com/Raghavendra-Devale/Botiq-web',
-      featured: false
+      featured: false,
+      image: 'assets/images/botiq_web.png'
     },
 
     {
@@ -79,7 +83,8 @@ export class Projects {
         'REST API'
       ],
       github: 'https://github.com/Raghavendra-Devale/AlphaFinSync',
-      featured: false
+      featured: false,
+      image: 'assets/images/code_mockup.png'
     },
 
     {
@@ -92,7 +97,8 @@ export class Projects {
         'JavaScript'
       ],
       github: 'https://github.com/Raghavendra-Devale/carpenter-gallery',
-      featured: false
+      featured: false,
+      image: 'assets/images/code_mockup.png'
     },
 
     {
@@ -108,7 +114,52 @@ export class Projects {
         'AI'
       ],
       github: '',
-      featured: false
+      featured: false,
+      image: ''
+    },
+    {
+      title: 'Prep-Smart – Placement Preparation Portal',
+      category: 'Web App',
+      description:
+        'Developed a web-based portal to manage placement preparation activities, featuring backend logic and database connectivity in Java.',
+      technologies: [
+        'Java',
+        'MySQL',
+        'HTML',
+        'CSS',
+        'JDBC'
+      ],
+      github: 'https://github.com/Raghavendra-Devale',
+      featured: false,
+      image: ''
+    },
+    {
+      title: 'DSA Cracker Platform',
+      category: 'Problem Solving',
+      description:
+        'Built a platform to track problem-solving progress using structured data handling and logic based on core data structures.',
+      technologies: [
+        'Java',
+        'Data Structures',
+        'Algorithms'
+      ],
+      github: 'https://github.com/Raghavendra-Devale',
+      featured: false,
+      image: ''
+    },
+    {
+      title: 'Placement Assistance System',
+      category: 'System Integration',
+      description:
+        'Developed a system to shortlist candidates based on eligibility criteria, implementing filtering logic and basic database interactions.',
+      technologies: [
+        'Java',
+        'MySQL',
+        'SQL'
+      ],
+      github: 'https://github.com/Raghavendra-Devale',
+      featured: false,
+      image: ''
     }
 
   ];

@@ -1,41 +1,31 @@
 <section id="experience">
-
   <div class="container-custom">
-
-    <h2 class="section-title">
-      Experience
-    </h2>
+    <h2 class="section-title">Work Experience</h2>
 
     <div class="timeline">
-
       @for(exp of experiences; track exp.company) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <div class="card-header-flex">
+              <div>
+                <h3>{{ exp.role }}</h3>
+                <h4><i class="fa-solid fa-building me-2 text-primary"></i>{{ exp.company }}</h4>
+              </div>
+              <span class="duration-badge">{{ exp.duration }}</span>
+            </div>
 
-        <div class="experience-card">
-
-          <h3>{{ exp.role }}</h3>
-
-          <h4>{{ exp.company }}</h4>
-
-          <p class="duration">
-            {{ exp.duration }}
-          </p>
-
-          <ul>
-
-            @for(point of exp.points; track point) {
-
-              <li>{{ point }}</li>
-
-            }
-
-          </ul>
-
+            <ul class="points-list">
+              @for(point of exp.points; track point) {
+                <li>
+                  <span class="bullet-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                  <span class="point-text">{{ point }}</span>
+                </li>
+              }
+            </ul>
+          </div>
         </div>
-
       }
-
     </div>
-
   </div>
-
 </section>

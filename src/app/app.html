@@ -1,18 +1,44 @@
-<router-outlet>
-  <app-navbar />
+<!-- Custom Cursor Follower elements -->
+<div class="cursor-follower" id="cursor-follower"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
 
-<app-hero />
+<!-- Drifting Glassmorphic Background Boxes (dynamically populated in TS) -->
+<div class="bg-animation" id="bgAnimation">
+  @for (box of boxes(); track $index) {
+    <div 
+      class="floating-box" 
+      [style.width]="box.width" 
+      [style.height]="box.height" 
+      [style.left]="box.left" 
+      [style.top]="box.top">
+    </div>
+  }
+</div>
 
-<app-about />
+<!-- Scroll to Top Button -->
+<div 
+  class="scroll-top" 
+  id="scrollTop" 
+  [class.show]="showScrollTop" 
+  (click)="scrollToTop()">
+  <i class="bx bx-up-arrow-alt"></i>
+</div>
 
-<app-experience />
+<app-navbar />
 
-<app-skills />
-
-<app-projects />
-
-<app-contact />
+<main>
+  <app-hero />
+  <app-about />
+  <app-services />
+  <app-education />
+  <app-experience />
+  <app-skills />
+  <app-projects />
+  <app-certifications />
+  <app-contact />
+</main>
 
 <app-footer />
 
-</router-outlet>
+<!-- Router outlet is placed here to handle any future routed page overlays, but won't interfere with the main single-page layout -->
+<router-outlet />

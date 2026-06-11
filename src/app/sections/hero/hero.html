@@ -1,41 +1,62 @@
-<section class="hero-section">
+<section class="hero-section" id="home">
+  <!-- Glowing Ambient Blobs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
 
   <div class="container-custom hero-content">
+    <div class="hero-grid">
+      <!-- Left Info Column -->
+      <div class="hero-info">
+        <div class="intro-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Open to Collaboration</span>
+        </div>
 
-    <p class="intro-text">Hi, I'm</p>
+        <p class="intro-text">Hello, It's Me</p>
 
-    <h1 class="name">
-      Raghavendra Devale
-    </h1>
+        <h1 class="name">Raghavendra Devale</h1>
 
-    <h2 class="role">
-      Software Developer
-    </h2>
+        <h3 class="role-typing">
+          And I'm a <span class="typing-text">{{ typedText }}</span><span class="typed-cursor">|</span>
+        </h3>
 
-    <p class="tech-stack">
-      Java • Spring Boot • Angular
-    </p>
+        <p class="description">
+          I'm a full-stack software developer specializing in Java, Spring Boot, and Angular. Currently, I'm building modern applications at DFIVE Technologies while researching LLMs, vector search, and RAG architectures.
+        </p>
 
-    <p class="description">
-      Building Full-Stack Applications and exploring
-      AI, LLMs & RAG Systems.
-    </p>
+        <div class="tech-stack-pills">
+          <span class="tech-pill"><i class="fab fa-java"></i> Java</span>
+          <span class="tech-pill"><i class="fas fa-leaf"></i> Spring Boot</span>
+          <span class="tech-pill"><i class="fab fa-angular"></i> Angular</span>
+          <span class="tech-pill"><i class="fab fa-python"></i> Python</span>
+          <span class="tech-pill"><i class="fas fa-brain"></i> AI & RAG</span>
+        </div>
 
-    <div class="hero-buttons">
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/raghavendra-devale" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/Raghavendra-Devale" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="mailto:raghavendradevale07@gmail.com" title="Email"><i class="bx bxs-envelope"></i></a>
+        </div>
 
-      <a href="#projects" class="btn btn-primary">
-        View Projects
-      </a>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary-glow">
+            View Projects
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+          </a>
 
-      <a
-        href="assets/resume/Raghavendra_Devale.pdf"
-        class="btn btn-outline-light"
-        download>
-        Download Resume
-      </a>
+          <a href="assets/resume/Raghavendra_Devale.pdf" class="btn-secondary-glow" download>
+            <i class="fa-solid fa-download"></i>
+            Download Resume
+          </a>
+        </div>
+      </div>
 
+      <!-- Right Avatar Column -->
+      <div class="hero-avatar">
+        <div class="avatar-wrapper">
+          <img src="assets/images/Raghavendra_Devale.png" alt="Raghavendra Devale" class="profile-avatar" />
+        </div>
+      </div>
     </div>
-
   </div>
-
 </section>
