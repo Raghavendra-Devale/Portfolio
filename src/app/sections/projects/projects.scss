@@ -11,10 +11,19 @@
   height: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
   &:hover {
+    transform: translate(-4px, -4px);
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0px var(--accent);
+    background: var(--bg-card-hover);
+    
     .btn-project-link {
-      color: var(--primary);
+      color: var(--accent);
       
       .icon-arrow {
         transform: translateX(4px);
@@ -24,22 +33,21 @@
 }
 
 .featured {
-  border: 1px solid rgba(0, 242, 254, 0.35); /* Electric cyan border for featured */
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.12);
+  border: 1px solid var(--accent);
   
   &::before {
     content: 'FEATURED';
     position: absolute;
-    top: 24px;
-    right: 24px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: var(--bg-darker);
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-family: var(--font-mono);
     font-size: 0.65rem;
-    font-weight: 850;
+    font-weight: 700;
     letter-spacing: 0.08em;
-    padding: 3px 12px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 242, 254, 0.25);
+    padding: 3px 10px;
+    border-radius: 0px;
     z-index: 10;
   }
 }
@@ -52,15 +60,16 @@
 }
 
 .category-badge {
+  font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--accent);
   letter-spacing: 0.05em;
-  background: rgba(0, 242, 254, 0.06);
-  border: 1px solid rgba(0, 242, 254, 0.18);
-  padding: 4px 12px;
-  border-radius: 30px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 3px 8px;
+  border-radius: 0px;
   display: inline-block;
 }
 
@@ -72,9 +81,11 @@
 }
 
 .project-title {
-  font-size: 1.35rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
   color: var(--text-light);
 }
 
@@ -89,24 +100,25 @@
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 24px;
 }
 
 .tech-tag {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
   border: 1px solid var(--border-color);
-  color: var(--text-normal);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.76rem;
-  font-weight: 500;
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: 0px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
   transition: all 0.3s ease;
   
   &:hover {
-    border-color: var(--primary);
-    color: var(--text-light);
-    background: rgba(56, 189, 248, 0.04);
+    border-color: var(--accent);
+    color: var(--accent);
+    background: transparent;
   }
 }
 
@@ -119,31 +131,48 @@
 .btn-project-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: var(--text-light);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
   
   i {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .icon-arrow {
     font-size: 0.75rem;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
+  
+  &:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    
+    .icon-arrow {
+      transform: translateX(4px);
+    }
+  }
 }
 
 .in-progress-label {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #fbbf24;
-  background: rgba(251, 191, 36, 0.08);
-  border: 1px solid rgba(251, 191, 36, 0.15);
-  padding: 4px 12px;
-  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 3px 8px;
+  border-radius: 0px;
   display: flex;
   align-items: center;
 }

@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
-
+  closeMenu() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse?.classList.contains('show')) {
+      const toggler = document.querySelector('.navbar-toggler') as HTMLElement;
+      toggler?.click();
+    }
+  }
 }

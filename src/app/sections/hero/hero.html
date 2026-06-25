@@ -1,19 +1,10 @@
 <section class="hero-section" id="home">
-  <!-- Glowing Ambient Blobs -->
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
-  <div class="container-custom hero-content">
+  <div class="container-custom">
     <div class="hero-grid">
-      <!-- Left Info Column -->
+      <!-- Left Column: Hero Text -->
       <div class="hero-info">
-        <div class="intro-badge">
-          <span class="badge-dot"></span>
-          <span class="badge-text">Open to Collaboration</span>
-        </div>
-
-        <p class="intro-text">Hello, It's Me</p>
-
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>EST. 2024 · Software Developer</span>
+        
         <h1 class="name">Raghavendra Devale</h1>
 
         <h3 class="role-typing">
@@ -24,6 +15,7 @@
           I'm a full-stack software developer specializing in Java, Spring Boot, and Angular. Currently, I'm building modern applications at DFIVE Technologies while researching LLMs, vector search, and RAG architectures.
         </p>
 
+        <!-- Tech Stack Pills (Brutalist style) -->
         <div class="tech-stack-pills">
           <span class="tech-pill"><i class="fab fa-java"></i> Java</span>
           <span class="tech-pill"><i class="fas fa-leaf"></i> Spring Boot</span>
@@ -32,16 +24,20 @@
           <span class="tech-pill"><i class="fas fa-brain"></i> AI & RAG</span>
         </div>
 
+        <!-- Social Icons (Brutalist style) -->
         <div class="social-icons">
           <a href="https://linkedin.com/in/raghavendra-devale" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/Raghavendra-Devale" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
           <a href="mailto:raghavendradevale07@gmail.com" title="Email"><i class="bx bxs-envelope"></i></a>
         </div>
 
+        <!-- Hero Buttons -->
         <div class="hero-buttons">
           <a href="#projects" class="btn-primary-glow">
             View Projects
-            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
 
           <a href="assets/resume/Raghavendra_Devale.pdf" class="btn-secondary-glow" download>
@@ -51,12 +47,40 @@
         </div>
       </div>
 
-      <!-- Right Avatar Column -->
+      <!-- Right Column: Brivon styled Hero Portrait -->
       <div class="hero-avatar">
-        <div class="avatar-wrapper">
+        <div class="hero-media">
           <img src="assets/images/Raghavendra_Devale.png" alt="Raghavendra Devale" class="profile-avatar" />
+          <div class="floating-tag ft-top">
+            <span class="pill-dot" aria-hidden="true"></span>
+            RMD · DEV
+          </div>
+          <div class="floating-tag ft-bottom">
+            Spring Boot · Angular · AI/RAG
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Stat Strip -->
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="stat-num">02<span class="lime-text">+</span> YR</div>
+        <div class="stat-label">Professional Dev Experience</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">10<span class="lime-text">+</span></div>
+        <div class="stat-label">Projects Deployed</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">BEL</div>
+        <div class="stat-label">Apprenticeship Foundation</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100<span class="lime-text">%</span></div>
+        <div class="stat-label">Code Quality Focused</div>
+      </div>
+    </div>
+
   </div>
 </section>

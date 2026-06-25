@@ -13,74 +13,93 @@
 }
 
 .column-subtitle {
-  font-size: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: var(--text-light);
   display: flex;
   align-items: center;
   letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  
+  i {
+    color: var(--accent) !important;
+  }
 }
 
 .cert-card {
-  text-align: center;
-  padding: 30px;
+  text-align: left;
+  padding: 24px;
   position: relative;
   overflow: hidden;
   height: 100%;
-  
-  &::before {
-    content: '🏆';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 80px;
-    opacity: 0.05;
-    transition: all 0.5s ease;
-    pointer-events: none;
-  }
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--border-hover);
-    box-shadow: 0 15px 40px var(--primary-glow);
+    transform: translate(-4px, -4px);
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0px var(--accent);
     background: var(--bg-card-hover);
     
-    &::before {
-      transform: rotate(20deg) scale(1.25);
-      opacity: 0.12;
+    h3 {
+      color: var(--text-light);
+    }
+
+    .cert-card-link {
+      color: var(--text-light);
+      .icon-arrow {
+        transform: translateX(4px);
+      }
     }
   }
   
   h3 {
-    color: var(--primary);
-    font-size: 1.2rem;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
     margin-bottom: 8px;
-    position: relative;
-    z-index: 2;
+    transition: color 0.3s ease;
   }
   
   p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin: 0;
-    position: relative;
-    z-index: 2;
   }
-}
 
-.leadership-card {
-  &::before {
-    content: '🌟' !important;
+  .cert-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    .icon-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.3s ease;
+    }
   }
 }
 
 .cert-icon {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  display: inline-block;
-  position: relative;
-  z-index: 2;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
 }
 
 @media (max-width: 992px) {

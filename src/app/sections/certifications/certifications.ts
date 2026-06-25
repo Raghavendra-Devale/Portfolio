@@ -9,6 +9,12 @@ import { Component } from '@angular/core';
 export class Certifications {
   certificationsList = [
     {
+      title: 'Java Spring Framework, Spring Boot, Spring AI - Gen AI',
+      issuer: 'Udemy',
+      icon: '🍃',
+      link: 'https://www.udemy.com/certificate/UC-2d2c0fe6-77d2-4a21-bc33-f13047533251/'
+    },
+    {
       title: 'Postman Student Expert',
       issuer: 'Postman Academy',
       icon: '🏆'

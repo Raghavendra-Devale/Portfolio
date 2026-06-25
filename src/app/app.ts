@@ -59,7 +59,6 @@ export class App implements OnInit, AfterViewInit {
       if (!isTouchDevice) {
         document.body.classList.add('cursor-active');
       }
-      this.generateBackgroundBoxes(isTouchDevice);
     }
   }
 
@@ -73,27 +72,11 @@ export class App implements OnInit, AfterViewInit {
     }
   }
 
-  private generateBackgroundBoxes(isTouchDevice: boolean) {
-    const boxCount = isTouchDevice ? 6 : 15;
-    const generatedBoxes: BackgroundBox[] = [];
-    for (let i = 0; i < boxCount; i++) {
-      const size = Math.random() * 120 + 50; // 50px to 170px
-      generatedBoxes.push({
-        width: `${size}px`,
-        height: `${size}px`,
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`
-      });
-    }
-    this.boxes.set(generatedBoxes);
-  }
-
   @HostListener('window:scroll')
   onWindowScroll() {
     if (!this.isBrowser) return;
     const scrolled = window.pageYOffset || document.documentElement.scrollTop;
     this.showScrollTop = scrolled > 300;
-    this.updateBackgroundParallax(scrolled);
   }
 
   @HostListener('window:mousemove', ['$event'])
@@ -116,12 +99,6 @@ export class App implements OnInit, AfterViewInit {
       this.dot.style.left = `${posX}px`;
       this.dot.style.top = `${posY}px`;
     }
-
-    this.mouseX = (posX / window.innerWidth) - 0.5;
-    this.mouseY = (posY / window.innerHeight) - 0.5;
-
-    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    this.updateBackgroundParallax(scrolled);
   }
 
   @HostListener('document:mouseover', ['$event'])
@@ -131,7 +108,7 @@ export class App implements OnInit, AfterViewInit {
     if (target.closest('a, button, .project-card, .skill-card, .btn, [role="button"], .timeline-content, .contact-card')) {
       this.follower.style.width = '45px';
       this.follower.style.height = '45px';
-      this.follower.style.borderColor = 'var(--accent-purple)';
+      this.follower.style.borderColor = 'var(--primary)';
       this.dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
       this.dot.style.backgroundColor = 'var(--primary)';
     }
@@ -144,26 +121,10 @@ export class App implements OnInit, AfterViewInit {
     if (target.closest('a, button, .project-card, .skill-card, .btn, [role="button"], .timeline-content, .contact-card')) {
       this.follower.style.width = '30px';
       this.follower.style.height = '30px';
-      this.follower.style.borderColor = 'rgba(56, 189, 248, 0.6)';
+      this.follower.style.borderColor = 'rgba(212, 255, 61, 0.6)';
       this.dot.style.transform = 'translate(-50%, -50%) scale(1)';
-      this.dot.style.backgroundColor = 'var(--accent-purple)';
+      this.dot.style.backgroundColor = 'var(--primary)';
     }
-  }
-
-  private updateBackgroundParallax(scrolled: number) {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
-
-    const boxes = document.querySelectorAll('.floating-box');
-    boxes.forEach((box, index) => {
-      const mSpeed = (index + 1) * 0.25;
-      const sSpeed = (index % 3 + 1) * 0.08;
-      
-      const x = this.mouseX * mSpeed * 50;
-      const y = (this.mouseY * mSpeed * 50) + (scrolled * sSpeed);
-      
-      (box as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
-    });
   }
 
   scrollToTop() {

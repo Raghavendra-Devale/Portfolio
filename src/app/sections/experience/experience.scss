@@ -9,10 +9,9 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 3px;
+    width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, var(--primary), var(--accent), var(--accent-purple));
-    border-radius: 10px;
+    background: var(--border-color);
     top: 0;
   }
 }
@@ -42,36 +41,44 @@
 .timeline-dot {
   position: absolute;
   top: 25px;
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border: 3px solid var(--bg-darker);
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border: 2px solid var(--bg-darker);
   border-radius: 50%;
-  box-shadow: 0 0 12px var(--primary-glow);
   z-index: 5;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s var(--ease-out);
 }
 
 .timeline-item:hover {
   .timeline-dot {
     transform: scale(1.25);
-    box-shadow: 0 0 20px var(--accent-glow);
-    background: var(--accent);
   }
 }
 
 .timeline-content {
   padding: 24px;
   text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: all 0.3s var(--ease-out);
+  
+  &:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+  }
   
   h3 {
+    font-family: var(--font-display);
     color: var(--primary);
     font-size: 1.25rem;
-    margin-bottom: 6px;
     font-weight: 700;
+    margin-bottom: 6px;
   }
   
   h4 {
+    font-family: var(--font-body);
     color: var(--text-light);
     font-size: 1rem;
     margin-bottom: 15px;
@@ -79,6 +86,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    i {
+      color: var(--primary) !important;
+    }
   }
 }
 
@@ -93,11 +104,12 @@
 }
 
 .duration-badge {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-darker);
   border: 1px solid var(--border-color);
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
@@ -109,7 +121,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   
   li {
     display: flex;
@@ -118,23 +130,23 @@
     
     .bullet-icon {
       color: var(--primary);
-      font-size: 0.7rem;
-      margin-top: 5px;
+      font-size: 0.65rem;
+      margin-top: 6px;
       flex-shrink: 0;
-      transition: transform 0.2s ease, color 0.2s ease;
+      transition: transform 0.2s var(--ease-out);
     }
     
     .point-text {
+      font-family: var(--font-body);
       color: var(--text-normal);
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
   }
   
   li:hover {
     .bullet-icon {
       transform: translateX(3px);
-      color: var(--accent);
     }
     
     .point-text {
@@ -160,7 +172,7 @@
     margin-bottom: 30px;
     
     .timeline-dot {
-      left: -29px !important;
+      left: -27px !important;
       right: auto !important;
       top: 22px;
     }

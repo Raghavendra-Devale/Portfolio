@@ -1,25 +1,32 @@
-/* Design Tokens & Theme Colors (Twilight Navy & Electric Mint Cyberpunk) */
+/* Design Tokens & Theme Colors (Brivon Brutalist) */
 :root {
-  --bg-dark: #0a0e1a;          /* Deep Twilight Space Navy */
-  --bg-darker: #05070d;        /* Deepest Void Navy */
-  --bg-card: rgba(16, 24, 48, 0.55); /* Glassmorphic Twilight Card */
-  --bg-card-hover: rgba(25, 38, 74, 0.75);
-  --primary: #00f2fe;          /* Electric Cyan */
-  --primary-glow: rgba(0, 242, 254, 0.22);
-  --accent: #10b981;           /* Mint / Emerald Green */
-  --accent-glow: rgba(16, 185, 129, 0.22);
-  --accent-purple: #9061f9;     /* Cyber Violet */
-  --accent-purple-glow: rgba(144, 97, 249, 0.22);
-  --text-light: #f8fafc;
-  --text-normal: #e2e8f0;      /* Enhanced Brightness for Legibility */
-  --text-muted: #94a3b8;
-  --border-color: rgba(0, 242, 254, 0.15); /* Subtle Cyan border */
-  --border-hover: rgba(16, 185, 129, 0.4);   /* Mint glow hover border */
+  --bg-dark: #0A0A0C;             /* Brivon Charcoal Ground */
+  --bg-darker: #050507;           /* Deepest Black */
+  --bg-card: #121216;             /* Flat Charcoal Card */
+  --bg-card-hover: #1E1E24;       /* Elevated Hover Card */
+  --primary: #D4FF3D;             /* Electric Lime */
+  --primary-glow: rgba(212, 255, 61, 0.15);
+  --accent: #D4FF3D;              /* Electric Lime */
+  --accent-glow: rgba(212, 255, 61, 0.15);
+  --accent-purple: #D4FF3D;
+  --accent-purple-glow: rgba(212, 255, 61, 0.15);
+  --text-light: #F4F4F0;          /* Paper Ivory */
+  --text-normal: #C9C9C2;         /* Soft Paper Ivory */
+  --text-muted: #80807A;          /* Muted Paper */
+  --border-color: rgba(244, 244, 240, 0.08); /* Clean Subtle Lines */
+  --border-hover: rgba(212, 255, 61, 0.35);   /* Electric Lime Hover Border */
+  
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  background-color: var(--bg-dark);
 }
 
 html, body {
@@ -30,7 +37,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -38,7 +45,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   color: var(--text-light);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -49,13 +56,13 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 2px solid rgba(0, 242, 254, 0.6);
+  border: 2px solid rgba(212, 255, 61, 0.6);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
-  mix-blend-mode: screen;
+  mix-blend-mode: difference;
   display: none; /* Shown dynamically on desktop */
 }
 
@@ -63,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: var(--accent-purple);
+  background: var(--primary);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -86,7 +93,7 @@ body.cursor-active {
   background: var(--bg-darker);
 }
 ::-webkit-scrollbar-thumb {
-  background: #111827;
+  background: #18181c;
   border: 2px solid var(--bg-darker);
   border-radius: 10px;
 }
@@ -107,46 +114,38 @@ body.cursor-active {
 }
 
 .floating-box {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.03), rgba(16, 185, 129, 0.03));
-  border: 1px solid rgba(0, 242, 254, 0.08);
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+  display: none;
 }
 
 /* Common Layout Elements */
 section {
-  padding: 120px 0;
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .container-custom {
   width: 90%;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Glassmorphism Card (Reference Style) */
+/* Glassmorphism Card (Reference Style Updated to Brutalist Card) */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 30px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-out);
   position: relative;
   overflow: hidden;
 }
 
 .glass-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   border-color: var(--border-hover);
-  box-shadow: 0 15px 40px var(--primary-glow);
   background: var(--bg-card-hover);
 }
 
@@ -159,7 +158,7 @@ section {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 255, 61, 0.1), transparent);
     transition: left 0.6s ease;
     z-index: 2;
     pointer-events: none;
@@ -172,76 +171,77 @@ section {
 
 /* Shifting Gradient Text */
 .gradient-text {
-  background: linear-gradient(45deg, var(--primary), var(--accent), var(--accent-purple));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
   display: inline-block;
-  animation: gradientShift 4s ease infinite;
 }
 
 /* Section Title Stylings */
 .section-title {
-  font-size: 2.75rem;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  font-weight: 700;
   text-align: center;
   margin-bottom: 60px;
-  position: relative;
   color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
   
   &::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-purple));
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
     margin: 15px auto 0;
-    border-radius: 2px;
   }
 }
 
-/* Glowing Button Styles */
+/* Glowing Button Styles (Now Brivon Flat Styles) */
 .btn-primary-glow {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  color: var(--bg-dark) !important;
+  background: var(--primary) !important;
+  color: var(--bg-darker) !important;
   font-weight: 600;
+  font-family: var(--font-body);
   border: none;
   padding: 12px 28px;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px var(--primary-glow);
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  transition: all 0.2s var(--ease-out);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  box-shadow: none !important;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-glow), 0 0 15px var(--primary-glow);
-    filter: brightness(1.1);
+    background: var(--lime-soft) !important;
+    box-shadow: 0 8px 20px rgba(212, 255, 61, 0.15) !important;
   }
 }
 
 .btn-secondary-glow {
-  background: transparent;
+  background: transparent !important;
   color: var(--text-light) !important;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-body);
+  border: 1px solid var(--border-color) !important;
   padding: 12px 28px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  transition: all 0.2s var(--ease-out);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  backdrop-filter: blur(4px);
+  box-shadow: none !important;
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--primary);
-    box-shadow: 0 0 10px var(--primary-glow);
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
   }
 }
 

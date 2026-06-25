@@ -12,6 +12,11 @@
               <div class="cert-icon">{{ cert.icon }}</div>
               <h3>{{ cert.title }}</h3>
               <p>{{ cert.issuer }}</p>
+              @if(cert.link) {
+                <a [href]="cert.link" target="_blank" class="cert-card-link">
+                  View Credentials <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                </a>
+              }
             </div>
           }
         </div>
