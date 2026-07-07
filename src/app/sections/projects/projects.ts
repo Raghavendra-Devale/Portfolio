@@ -103,7 +103,7 @@ export class Projects {
 
     {
       title: 'AI Job Recommendation Platform',
-      category: 'In Progress',
+      category: 'AI / Full Stack',
       description:
         'AI-powered platform that analyzes resumes and recommends relevant jobs using modern AI workflows.',
       technologies: [
@@ -113,9 +113,9 @@ export class Projects {
         'JWT',
         'AI'
       ],
-      github: '',
-      featured: false,
-      image: ''
+      github: 'https://github.com/Raghavendra-Devale/job-platform',
+      featured: true,
+      image: 'assets/images/job_platform.png'
     },
     {
       title: 'Prep-Smart – Placement Preparation Portal',
